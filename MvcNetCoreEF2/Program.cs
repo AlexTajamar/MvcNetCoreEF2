@@ -1,7 +1,20 @@
+using Microsoft.EntityFrameworkCore;
+using MvcNetCoreEF2.Repositories;
+using MvcNetCoreEF2.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<RepositoryDept>();
+
+string connectionString = builder.Configuration.GetConnectionString("sqlDepartamentos");
+
+builder.Services.AddDbContext<DeptContext>(options =>
+{
+    options.UseSqlServer(connectionString);
+});
 
 var app = builder.Build();
 
@@ -20,10 +33,7 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
+app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
-
 
 app.Run();

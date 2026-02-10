@@ -1,0 +1,19 @@
+﻿@model Departamento
+
+<div class="container">
+    <h2>Editar Hospital</h2>
+    <form method="post">
+        <label class="form-label">ID:</label>
+        <input class="form-control" type="text" name="dept" value="@Model.Dept" readonly />
+
+        <label class="form-label">Nombre:</label>
+        <input class="form-control" type="text" name="nombre" value="@Model.Nombre"/>
+
+        <label class="form-label">localizacion:</label>
+        <input class="form-control" type="text" name="loc" value="@Model.Localizacion"/>
+
+        <button class="btn btn-success">Crear</button>
+    </form>
+
+    <a class="btn btn-primary" asp-action="Index">Volver</a>
+</div>

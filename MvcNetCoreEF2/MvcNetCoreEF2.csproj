@@ -6,4 +6,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.2" />
+    <PackageReference Include="Select.HtmlToPdf" Version="25.2.0" />
+    <PackageReference Include="Select.HtmlToPdf.NetCore" Version="25.2.0" />
+  </ItemGroup>
+
 </Project>
