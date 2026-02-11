@@ -81,11 +81,15 @@ namespace MvcNetCoreEF2.Repositories
 
         public async Task UpdateDoctoresEspecialidadAsyncSinRaw(string especialidad, int aumento)
         {
-            var doctores = await this.context.Doctor
-                .Where(d => d.ESPECIALIDAD == especialidad)
-                .ToListAsync();
+            //var doctores = await this.context.Doctor
+            //    .Where(d => d.ESPECIALIDAD == especialidad)
+            //    .ToListAsync();
+            var consulta = from datos in this.context.Doctor
+                           where datos.ESPECIALIDAD == especialidad
+                           select datos;
 
-            foreach (var doc in doctores)
+            List<Doctor> doctores = await consulta.ToListAsync();          
+                foreach (var doc in doctores)
             {
                 doc.SALARIO += aumento;
             }
