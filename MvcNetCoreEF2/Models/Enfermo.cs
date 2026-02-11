@@ -9,13 +9,13 @@ namespace MvcNetCoreEF2.Models
     {
         [Key]
         [Column("INSCRIPCION")]
-        public int Inscripcion { get; set; }
+        public string Inscripcion { get; set; }
         [Column("APELLIDO")]
         public string Apellido { get; set; }
         [Column("DIRECCION")]
         public string Direccion { get; set; }
         [Column("FECHA_NAC")]
-        public string FechaNac { get; set; }
+        public DateTime FechaNac { get; set; }
 
 
 
