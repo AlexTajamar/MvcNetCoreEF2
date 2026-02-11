@@ -9,5 +9,6 @@ namespace MvcNetCoreEF2.Data
             : base(options) { }
 
         public DbSet<Enfermo> Enfermos { get; set; }
+        public DbSet<Doctor> Doctor { get; set; }
     }
 }

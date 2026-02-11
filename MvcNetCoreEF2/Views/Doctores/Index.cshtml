@@ -1,0 +1,37 @@
+﻿@model Especialidades
+<h1>Especialidades</h1>
+<form method="post">
+<select class="form-control" name="especialidad">
+    <option value="">Seleccionar especialidad</option>
+    @foreach (var esp in Model.EspecialidadesList)
+    {
+        <option value="@esp">@esp</option>
+    }
+    <input type="number" name="aumento" />
+    <button>SUBIR SALARIO</button>
+</select>
+</form>
+
+@if(Model.DoctoresList != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Doctor</th>
+                <th>Salario</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var doc in Model.DoctoresList)
+            {
+                <tr>
+                    <td>@doc.APELLIDO</td>
+                    <td>@doc.SALARIO</td>
+                    <td>@doc.ESPECIALIDAD</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
